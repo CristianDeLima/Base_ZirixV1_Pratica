@@ -157,6 +157,7 @@ local itemlist = {
 	["tora"] = { index = "tora", nome = "Tora", type = "usar" },
 	["nf"] = { index = "nf", nome = "Nota Fisca", type = "usar" },
 	["portearmas"] = { index = "nf", nome = "Porte de Armas", type = "usar" },
+	["tomatinho"] = { index = "tomatinho", nome = "Tomatinho", type = "usar" },
 	---------------------------------------------------------------------------------------------------
 	--[ ARMAS / OUTROS ]-------------------------------------------------------------------------------
 	---------------------------------------------------------------------------------------------------	

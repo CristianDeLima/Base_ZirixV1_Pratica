@@ -157,6 +157,7 @@ cfg.items = {
 	["encomenda"] = { "Encomenda",0.5 },
 	["tora"] = { "Tora",1.0 },
 	["nf"] = { "Nota Fisca",0.1 }
+	["tomatinho"] = { "Tomatinhos",0.1 }
 }
 
 local function load_item_pack(name)
