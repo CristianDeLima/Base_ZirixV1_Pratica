@@ -68,7 +68,6 @@ RegisterKeyMapping('finalizarEmpregoTomates', 'Finalizar emprego de tomates', 'k
 function drawTxt(text,font,x,y,scale)
 	SetTextFont(font)
 	SetTextScale(scale,scale)
-	-- SetTextColour(r,g,b,a)
 	SetTextOutline()
 	SetTextCentre(1)
 	SetTextEntry("STRING")
