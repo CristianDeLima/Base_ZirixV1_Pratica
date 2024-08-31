@@ -1,0 +1,21 @@
+Leia com atenção:
+
+PROVA LUA 1
+- Contrua uma rota de emprego, de pelo menos 10 blips (1,5) OK
+- Que tenha marker, e ao chegar perto aparece para apertar 'E' (0,5) OK
+- Deve mostrar um texto de apertar 'E' na tela ao chegar perto (0,5) OK 
+- Player ganhe 500 reais por blip (0,5) OK
+- Último blip deve ser de cor diferente (0,5) OK
+- Deve iniciar com um comando chamado "/comecarProva" (0,5) OK
+- Deve ficar informando na tela que está com emprego ativo(0,5) OK
+- F6 cancela o emprego (1,0) OK
+- Deve importar no map a rota via GPS para próximo blip (0,5) OK
+- Cada blip deve ficar pelo menos em quadras diferentes (0,5) OK
+- Somente permissão Admin consegue iniciar o emprego (0,5) OK
+- Deve cobrar 1 item qualquer em cada blip para receber o dinheiro, se não tiver o item deve mostrar um mesagem de notify (0,5) OK
+
+Estrutural
+- Deve ter uma config separado com as locs dos blips (0,5) OK
+- Deve ter dentro da config o valor pago por blip, o pagamento deve pegar esse valor da config (0,5) OK
+- Deve ter os imports da vRP (0,5) OK
+- Deve lançar webwooks em uma sala do discord, quando inicia e termina o emprego (1,0)
