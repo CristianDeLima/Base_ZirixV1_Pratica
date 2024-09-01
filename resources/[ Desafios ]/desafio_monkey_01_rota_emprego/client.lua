@@ -8,7 +8,6 @@ local idMarker = 1
 RegisterCommand("comecarprova", function()
     if fromServer.hasGroup() then
         fromServer.SendWebhookMessageJoin(webhookLink)
-        
         inRoute = true
         local sleep = 0
         local colorMarker = false
