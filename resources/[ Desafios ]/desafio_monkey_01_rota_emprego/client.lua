@@ -7,10 +7,10 @@ local idMarker = 1
 
 RegisterCommand("comecarprova", function()
     if fromServer.hasGroup() then
-        fromServer.SendWebhookMessage(webhookLink, "Entrou em serviço!")
+        fromServer.SendWebhookMessageJoin(webhookLink)
         
         inRoute = true
-        local sleep = 2000
+        local sleep = 0
         local colorMarker = false
         local blip = AddBlipForCoord(config.locationMarkers[idMarker])
         SetBlipRoute(blip, true)
@@ -20,7 +20,6 @@ RegisterCommand("comecarprova", function()
             local pedCds = GetEntityCoords(ped)
             local distance = #(pedCds - config.locationMarkers[idMarker])
             if distance <= 15 then
-                sleep = 0
                 if distance <= 2 and IsControlJustPressed(0, 38) then
                     fromServer.getItem()
                     RemoveBlip(blip)
@@ -48,7 +47,7 @@ end)
 
 RegisterCommand("sairDaRota", function()
     inRoute = false
-    fromServer.SendWebhookMessage(webhookLink, "Saiu do serviço!")
+    fromServer.SendWebhookMessageLeave(webhookLink)
 end)
 
 RegisterKeyMapping("sairDaRota", "Sair da rota", "keyboard", "F6")

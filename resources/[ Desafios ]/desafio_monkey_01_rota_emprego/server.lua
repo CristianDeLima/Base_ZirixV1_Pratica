@@ -27,7 +27,17 @@ function toClient.getItem()
     end
 end
 
-function toClient.SendWebhookMessage(webhook,message)
+function toClient.SendWebhookMessageJoin(webhook)
+    local user_id = vRP.getUserId(source)
+    local message = "O ID: " .. user_id .. " Entrou em serviço"
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
+function toClient.SendWebhookMessageLeave(webhook)
+    local user_id = vRP.getUserId(source)
+    local message = "O ID: " .. user_id .. " Saiu do serviço"
 	if webhook ~= nil and webhook ~= "" then
 		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
 	end
