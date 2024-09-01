@@ -27,6 +27,12 @@ function toClient.getItem()
     end
 end
 
+function toClient.SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 RegisterNetEvent("desafio_monkey:tirargrupo", function()
     local user_id = vRP.getUserId(source)
     if vRP.hasGroup(user_id, "mindmaster") then

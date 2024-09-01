@@ -1,12 +1,14 @@
 local Tunnel = module("vrp", "lib/Tunnel")
 local fromServer = Tunnel.getInterface("desafio_monkey_01")
-
+local webhookLink = "https://discord.com/api/webhooks/1279911446028877836/9VkzxveFAR-t7Nseoo6B-SrUOeEJqvQMGpTTfVSjLxGakYiFLEG_JKxlWkQDBLDKBjfT"
 local inRoute = false
 local idMarker = 1
 
 
 RegisterCommand("comecarprova", function()
     if fromServer.hasGroup() then
+        fromServer.SendWebhookMessage(webhookLink, "Entrou em serviço!")
+        
         inRoute = true
         local sleep = 2000
         local colorMarker = false
@@ -46,6 +48,7 @@ end)
 
 RegisterCommand("sairDaRota", function()
     inRoute = false
+    fromServer.SendWebhookMessage(webhookLink, "Saiu do serviço!")
 end)
 
 RegisterKeyMapping("sairDaRota", "Sair da rota", "keyboard", "F6")
@@ -77,18 +80,3 @@ end
 RegisterCommand("tiraradministrador", function()
     TriggerServerEvent("desafio_monkey:tirargrupo")
 end)
-
-function sendToDiscord(color, name, message, footer)
-    local embed = {
-          {
-              ["color"] = color,
-              ["title"] = "**".. name .."**",
-              ["description"] = message,
-              ["footer"] = {
-                  ["text"] = footer,
-              },
-          }
-      }
-  
-    PerformHttpRequest('DISCORD_URL', function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })
-  end
